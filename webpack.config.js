@@ -1,24 +1,27 @@
-const HtmlWebPackPlugin = require("html-webpack-plugin");
+const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+  devtool: 'inline-source-map',
   module: {
     rules: [
       {
-        test: /\.js$/,
         exclude: /node_modules/,
-        use: {
-          loader: "babel-loader"
-        }
+        test: /\.(js|jsx)$/,
+        use: ['babel-loader']
       }
     ]
   },
+  resolve: {
+    extensions: ['*', '.js', '.jsx', '.scss'],
+  },
   devServer: {
     port: 3333,
+    historyApiFallback: true
   },
   plugins: [
     new HtmlWebPackPlugin({
-      template: "./src/index.html",
-      filename: "./index.html"
-    }),
+      template: './src/index.html',
+      filename: './index.html'
+    })
   ]
 };

@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'Antaro';
+  src: url('../../assets/fonts/Antaro.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
+.header {
+  font-family: Antaro, sans-serif;
+  color: red;
+}
