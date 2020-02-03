@@ -4,18 +4,18 @@ import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
 
 const propTypes = {
   value: PropTypes.string,
-  onChange: PropTypes.func,
+  onChange: PropTypes.func
 };
 
 const defaultProps = {
   value: '',
-  onChange: () => { },
+  onChange: () => { }
 };
 
 const TestComponent = (props) => {
   const {
     value,
-    onChange,
+    onChange
   } = props;
   return (
     <ErrorBoundary>

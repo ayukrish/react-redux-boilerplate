@@ -1,0 +1,12 @@
+{
+  "plugins": [
+    "stylelint-scss"
+  ],
+  "extends": ["stylelint-config-recommended"],
+  "rules": {
+    "scss/dollar-variable-pattern": "^foo",
+    "scss/selector-no-redundant-nesting-selector": true,
+    "at-rule-no-unknown": null,
+    "scss/at-rule-no-unknown": true
+  }
+}

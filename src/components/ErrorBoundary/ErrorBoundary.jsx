@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const propTypes = {
-  children: PropTypes.node,
+  children: PropTypes.node
 };
 
 const defaultProps = {
-  children: null,
+  children: null
 };
 
 
@@ -19,7 +19,7 @@ class ErrorBoundary extends React.Component {
   componentDidCatch(error) {
     // Catch errors in any components below and re-render with error message
     this.setState({
-      hasError: error,
+      hasError: error
     });
     // You can also log error messages to an error reporting service here
   }

@@ -10,11 +10,11 @@ import TestComponent from '../../components/TestComponent/TestComponent';
 // });
 
 const mapStateToProps = (state) => ({
-  value: (state.value && state.value.data) || '',
+  value: (state.value && state.value.data) || ''
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  onChange: (data) => dispatch(onChange(data)),
+  onChange: (data) => dispatch(onChange(data))
 });
 
 export default connect(
