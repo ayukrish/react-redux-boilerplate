@@ -10,7 +10,11 @@
     "lint:js:fix": "npm run lint:js -- --fix",
     "lint": "npm run lint:js npm run lint:scss",
     "preCommit": "lint-staged",
-    "start": "webpack-dev-server --config ./webpack.config.js --mode development"
+    "prePush": "npm run test",
+    "start": "webpack-dev-server --config ./webpack.config.js --mode development",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch",
+    "test:update-snapshot": "jest --updateSnapshot --coverage"
   },
   "repository": {
     "type": "git",
@@ -23,6 +27,9 @@
   },
   "homepage": "https://github.com/Ayush-krishnatray/react-redux-boilerplate#readme",
   "dependencies": {
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "enzyme-to-json": "^3.4.4",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-redux": "^7.1.3",
@@ -47,8 +54,10 @@
     "eslint-plugin-prettier": "^2.6.2",
     "eslint-plugin-react": "^7.17.0",
     "html-webpack-plugin": "^3.2.0",
+    "jest": "^25.1.0",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.13.1",
+    "redux-mock-store": "^1.5.4",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.1.3",
     "stylelint": "^13.0.0",
