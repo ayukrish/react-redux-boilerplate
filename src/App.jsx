@@ -3,11 +3,13 @@ import {
   BrowserRouter as Router, Route, Switch, Link
 } from 'react-router-dom';
 import Footer from './components/Footer/Footer';
+import Header from './components/Header/Header';
 import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 import routes from './routes';
 
 const App = () => (
   <Router>
+    <Header />
     <main className="main">
       <Link to="/test">Test </Link>
       <ErrorBoundary>
