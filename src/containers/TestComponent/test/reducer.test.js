@@ -2,7 +2,7 @@ import reducer from '../reducer';
 import { ON_CHANGE } from '../constants';
 
 const state = {
-  data: '',
+  data: ''
 };
 
 describe('todos reducer', () => {
@@ -15,7 +15,7 @@ describe('todos reducer', () => {
     expect(
       reducer(state, {
         type: ON_CHANGE,
-        data,
+        data
       }),
     ).toEqual({ data });
   });

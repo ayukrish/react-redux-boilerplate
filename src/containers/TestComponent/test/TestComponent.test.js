@@ -9,7 +9,7 @@ import TestComponent from '../TestComponent';
 describe('TestComponent Test Suite', () => {
   const state = {
     value: {},
-    onChange: jest.fn(),
+    onChange: jest.fn()
   };
   const mockStore = configureMockStore();
   const store = mockStore(state);

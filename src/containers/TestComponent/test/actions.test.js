@@ -6,7 +6,7 @@ describe('actions', () => {
     const data = 'Finish docs';
     const expectedAction = {
       type: ON_CHANGE,
-      data,
+      data
     };
     expect(onChange(data)).toEqual(expectedAction);
   });
