@@ -4,17 +4,14 @@
 
 - react ^16.x
 - react-router 4.x
-- react-helmet 5.x
-- styled-components 4.x
 - redux 4.x
 - redux-saga 0.16.x
-- redux-persist 5.x
+- reselect ^4.x
+- node-sass ^4.x
 
 ### Development
 
 - webpack-dev-server 3.x
-- react-hot-loader 4.x
-- redux-devtools (with browser plugin)
 
 `npm start`
 
@@ -23,24 +20,20 @@
 - webpack 4.x
 - babel 7.x
 
-`npm run build`
 
 ### Code Quality
 
-- eslint 5.x
-- stylelint 9.x
+- eslint 6.x
+- stylelint 13.x
+- husky ^4.x
+- lint-staged ^10.7
 
-`npm run lint` / `npm run lint:styles`
+`npm run lint / npm run lint:js / npm run lint:js:fix / npm run lint:scss / npm run lint:sccs:fix`
 
 ### Unit Testing
 
-- jest 23.x
+- jest 25.x
 - enzyme 3.x
 
-`npm test`
+`npm test / npm run test:watch / test:update-snapshot`
 
-### End 2 End Testing
-
-- cypress 3.0.x
-
-`npm run test:e2e`
