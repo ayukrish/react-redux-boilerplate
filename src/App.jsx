@@ -1,31 +1,32 @@
 import React from 'react';
 import {
-  BrowserRouter as Router, Route, Switch, Link
+  BrowserRouter as Router,
+  Route,
+  Switch
 } from 'react-router-dom';
-import Footer from './components/Footer/Footer';
-import Header from './components/Header/Header';
 import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
+import Tabs from './components/Tabs';
 import routes from './routes';
 
 const App = () => (
   <Router>
-    <Header />
     <main className="main">
-      <Link to="/test">Test </Link>
       <ErrorBoundary>
-        <Switch>
-          {routes.map((route) => (
-            <Route
-              key={route.path}
-              path={route.path}
-              exact={route.exact}
-              render={() => <route.component />}
-            />
-          ))}
-        </Switch>
+        <Tabs />
+        <section className="section">
+          <Switch>
+            {routes.map((route) => (
+              <Route
+                key={route.path}
+                path={route.path}
+                exact={route.exact}
+                render={() => <route.component />}
+              />
+            ))}
+          </Switch>
+        </section>
       </ErrorBoundary>
     </main>
-    <Footer />
   </Router>
 );
 

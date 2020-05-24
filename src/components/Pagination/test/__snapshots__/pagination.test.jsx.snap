@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pagination Test Suite check for showPagination 1`] = `
+<div
+  className="undefined flex"
+/>
+`;
+
+exports[`Pagination Test Suite renders correctly 1`] = `
+<div
+  className="undefined flex"
+>
+  <button
+    disabled={true}
+    id="prev"
+    onClick={[Function]}
+    type="button"
+  >
+    Prev
+  </button>
+  <button
+    disabled={true}
+    id="next"
+    onClick={[Function]}
+    type="button"
+  >
+    Next
+  </button>
+</div>
+`;

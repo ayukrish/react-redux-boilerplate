@@ -1,16 +1,21 @@
-import Article from './containers/Article/Article';
-import TestComponent from './containers/TestComponent/TestComponent';
-// import MyForm from './containers/MyForm/MyForm';
+import Characters from './containers/Characters';
+import Locations from './containers/Locations';
+import Episodes from './containers/Episodes';
 
 const routes = [
   {
     path: '/',
-    component: Article,
+    component: Characters,
     exact: true
   },
   {
-    path: '/test',
-    component: TestComponent,
+    path: '/locations',
+    component: Locations,
+    exact: true
+  },
+  {
+    path: '/episodes',
+    component: Episodes,
     exact: true
   }
 ];

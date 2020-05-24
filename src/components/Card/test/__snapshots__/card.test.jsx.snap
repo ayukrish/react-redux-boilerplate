@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card Test Suite renders correctly with dataObj 1`] = `
+<article
+  className="undefined flex column"
+>
+  <div>
+    <img
+      alt="Test"
+      src="random Image"
+    />
+    <div
+      className="undefined "
+    >
+      <h2>
+        Test
+      </h2>
+    </div>
+  </div>
+  <div>
+    <div
+      className="undefined flex center"
+      key="Test"
+    >
+      <span>
+        Test
+      </span>
+      <span>
+        test
+      </span>
+    </div>
+  </div>
+</article>
+`;
+
+exports[`Card Test Suite renders correctly without any data 1`] = `
+<article
+  className="undefined flex column"
+>
+  <div>
+    <div
+      className="undefined undefined"
+    >
+      <h2 />
+    </div>
+  </div>
+  <div />
+</article>
+`;
+
+exports[`Card Test Suite renders correctly without dataObj 1`] = `
+<article
+  className="undefined flex column"
+>
+  <div>
+    <img
+      alt="Test"
+      src="random Image"
+    />
+    <div
+      className="undefined "
+    >
+      <h2>
+        Test
+      </h2>
+    </div>
+  </div>
+  <div />
+</article>
+`;

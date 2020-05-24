@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tabs Test Suite renders correctly 1`] = `
+<section>
+  <div
+    className="undefined "
+    key="characters"
+  >
+    <Link
+      to="/"
+    >
+      Characters
+    </Link>
+  </div>
+  <div
+    className="undefined undefined"
+    key="locations"
+  >
+    <Link
+      to="/locations"
+    >
+      Locations
+    </Link>
+  </div>
+  <div
+    className="undefined "
+    key="episodes"
+  >
+    <Link
+      to="/episodes"
+    >
+      Episodes
+    </Link>
+  </div>
+</section>
+`;
+
+exports[`Tabs Test Suite renders correctly without any data 1`] = `
+<section>
+  <div
+    className="undefined undefined"
+    key="characters"
+  >
+    <Link
+      to="/"
+    >
+      Characters
+    </Link>
+  </div>
+  <div
+    className="undefined "
+    key="locations"
+  >
+    <Link
+      to="/locations"
+    >
+      Locations
+    </Link>
+  </div>
+  <div
+    className="undefined "
+    key="episodes"
+  >
+    <Link
+      to="/episodes"
+    >
+      Episodes
+    </Link>
+  </div>
+</section>
+`;

@@ -4,7 +4,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 // import { routerMiddleware } from 'react-router-redux';
 import { rootReducer } from './reducer';
-// import rootSaga from './sagas';
+import rootSaga from './rootsaga.js';
 
 // create the saga middleware
 const sagaMiddleware = createSagaMiddleware();
@@ -21,7 +21,7 @@ const configureStore = () => {
       process.env.NODE_ENV === 'development' ? devTool : f => f,
     ));
   store.asyncReducers = {};
-  // sagaMiddleware.run(rootSaga);
+  sagaMiddleware.run(rootSaga);
   return store;
 };
 

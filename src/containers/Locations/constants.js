@@ -1,0 +1,2 @@
+export const GET_LOCATIONS = 'GET_LOCATIONS';
+export const SET_LOCATIONS = 'SET_LOCATIONS';

@@ -1,6 +1,10 @@
 import { combineReducers } from 'redux';
-import inputReducer from './containers/TestComponent/reducer';
+import charactersReducer from './containers/Characters/reducer';
+import episodesReducer from './containers/Episodes/reducer';
+import locationReducer from './containers/Locations/reducer';
 
 export const rootReducer = combineReducers({
-  value: inputReducer
+  characters: charactersReducer,
+  episodes: episodesReducer,
+  location: locationReducer
 });

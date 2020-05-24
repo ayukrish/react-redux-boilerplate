@@ -1,0 +1,24 @@
+@import '../../styles/variable.scss';
+
+.pagination {
+  width: 100%;
+  justify-content: flex-end;
+  margin: 20px 0;
+  button {
+    cursor: pointer;
+    padding: 16px 20px;
+    background: transparent;
+    margin: 0;
+    border: 1px solid $yellowtext;
+    color:$yellowtext;
+    margin-right: 20px;
+    &:disabled {
+      cursor: not-allowed;
+      color: rgb(170, 170, 170);
+      border: 1px solid rgb(170, 170, 170);
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

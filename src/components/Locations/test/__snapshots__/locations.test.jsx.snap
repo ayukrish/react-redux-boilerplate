@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Locations Test Suite renders correctly without any data 1`] = `
+<section
+  className="undefined flex wrap"
+>
+  <Pagination
+    contentLength={0}
+    currentPage={1}
+    limit={20}
+    onChange={[Function]}
+  />
+</section>
+`;
+
+exports[`Locations Test Suite renders correctly without any data 2`] = `
+<section
+  className="undefined flex wrap"
+>
+  <Card
+    dataObj={
+      Object {
+        "DIMENSION": "Dimension C-137",
+        "TYPE": "Planet",
+      }
+    }
+    heading="Earth (C-137)"
+    imgSrc=""
+    key="1"
+  />
+  <Pagination
+    contentLength={1}
+    currentPage={1}
+    limit={20}
+    onChange={[Function]}
+  />
+</section>
+`;
