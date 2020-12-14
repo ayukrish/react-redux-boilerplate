@@ -27,7 +27,7 @@
 - husky ^4.x
 - lint-staged ^10.7
 
-`npm run lint / npm run lint:js / npm run lint:js:fix / npm run lint:scss / npm run lint:sccs:fix`
+`npm run lint / npm run format`
 
 ### Unit Testing
 
