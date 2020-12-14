@@ -7,8 +7,9 @@ describe('getLocationSaga', () => {
   const genObject = getLocationSaga();
 
   it('should wait for every GET_LOCATIONS action and call getLocationsSaga', () => {
-    expect(genObject.next().value)
-      .toEqual(takeLatest(GET_LOCATIONS, getLocationsSaga));
+    expect(genObject.next().value).toEqual(
+      takeLatest(GET_LOCATIONS, getLocationsSaga)
+    );
   });
 
   it('should be done on next iteration', () => {
@@ -21,7 +22,6 @@ describe('getLocationsSaga', () => {
     const response = {};
     const saga = getLocationsSaga({ data: {} });
     saga.next();
-    expect(saga.next(response).value)
-      .toEqual(put(setLocations(response)));
+    expect(saga.next(response).value).toEqual(put(setLocations(response)));
   });
 });

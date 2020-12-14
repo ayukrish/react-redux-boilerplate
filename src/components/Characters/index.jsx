@@ -11,7 +11,7 @@ const propTypes = {
 
 const defaultProps = {
   charactersData: {},
-  getCharacters: () => { }
+  getCharacters: () => {}
 };
 
 export default class Characters extends Component {
@@ -31,25 +31,26 @@ export default class Characters extends Component {
     const { results = [] } = charactersData;
     return (
       <section className={`${styles.characterWrapper} flex wrap`}>
-        {results.length > 0 && results.map(item => (
-          <Card
-            key={item.id}
-            dataObj={{
-              STATUS: item && item.status,
-              SPECIES: item && item.species,
-              GENDER: item && item.gender,
-              ORIGIN: item && item.origin && item.origin.name,
-              LOCATION: item && item.location && item.location.name
-            }}
-            imgSrc={item && item.image}
-            heading={item && item.name}
-          />
-        ))}
+        {results.length > 0 &&
+          results.map((item) => (
+            <Card
+              key={item.id}
+              dataObj={{
+                STATUS: item && item.status,
+                SPECIES: item && item.species,
+                GENDER: item && item.gender,
+                ORIGIN: item && item.origin && item.origin.name,
+                LOCATION: item && item.location && item.location.name
+              }}
+              imgSrc={item && item.image}
+              heading={item && item.name}
+            />
+          ))}
         <Pagination
           contentLength={(results && results.length) || 0}
           currentPage={this.state.currentPage}
           limit={20}
-          onChange={currentPage => {
+          onChange={(currentPage) => {
             this.props.getCharacters(currentPage);
             this.setState({
               currentPage

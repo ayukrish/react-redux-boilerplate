@@ -12,7 +12,4 @@ const mapDispatchToProps = (dispatch) => ({
   getEpisodes: (pageNo) => dispatch(getEpisodes(pageNo))
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(Episodes);
+export default connect(mapStateToProps, mapDispatchToProps)(Episodes);

@@ -4,7 +4,6 @@ import Card from '../Card';
 import Pagination from '../Pagination';
 import * as styles from './episodes.scss';
 
-
 const propTypes = {
   getEpisodes: PropTypes.func,
   episodeData: PropTypes.object
@@ -12,7 +11,7 @@ const propTypes = {
 
 const defaultProps = {
   episodeData: {},
-  getEpisodes: () => { }
+  getEpisodes: () => {}
 };
 
 export default class Episodes extends Component {
@@ -32,21 +31,22 @@ export default class Episodes extends Component {
     const { results = {} } = episodeData;
     return (
       <section className={`${styles.episodeWrapper} flex wrap`}>
-        {results.length > 0 && results.map(item => (
-          <Card
-            key={item.id}
-            dataObj={{
-              EPISODE: item && item.episode,
-              'AIR DATE': item && item.air_date
-            }}
-            heading={item && item.name}
-          />
-        ))}
+        {results.length > 0 &&
+          results.map((item) => (
+            <Card
+              key={item.id}
+              dataObj={{
+                EPISODE: item && item.episode,
+                'AIR DATE': item && item.air_date
+              }}
+              heading={item && item.name}
+            />
+          ))}
         <Pagination
           contentLength={(results && results.length) || 0}
           currentPage={this.state.currentPage}
           limit={20}
-          onChange={currentPage => {
+          onChange={(currentPage) => {
             this.props.getEpisodes(currentPage);
             this.setState({
               currentPage

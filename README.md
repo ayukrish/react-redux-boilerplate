@@ -20,7 +20,6 @@
 - webpack 4.x
 - babel 7.x
 
-
 ### Code Quality
 
 - eslint 6.x
@@ -36,4 +35,3 @@
 - enzyme 3.x
 
 `npm test / npm run test:watch / test:update-snapshot`
-

@@ -35,30 +35,33 @@ class Tabs extends React.PureComponent {
         selectedTab: tabDetails.id
       });
     }
-  }
+  };
 
-  getActiveTab = route => {
-    const index = tabItems.findIndex(item => item.routePath === route);
+  getActiveTab = (route) => {
+    const index = tabItems.findIndex((item) => item.routePath === route);
     return index === -1 ? tabItems[0] : tabItems[index];
-  }
+  };
 
   getTabItems = () => {
     const { selectedTab } = this.state;
-    return tabItems && tabItems.map(item => (
-      <div
-        key={item.id}
-        className={`${styles.tab} ${selectedTab === item.id ? styles.active : ''}`}
-      >
-        <Link to={item.routePath}>{item.name}</Link>
-      </div>
-    ));
-  }
+    return (
+      tabItems &&
+      tabItems.map((item) => (
+        <div
+          key={item.id}
+          className={`${styles.tab} ${
+            selectedTab === item.id ? styles.active : ''
+          }`}
+        >
+          <Link to={item.routePath}>{item.name}</Link>
+        </div>
+      ))
+    );
+  };
 
   render() {
     return (
-      <section className={styles.tabWrapper}>
-        {this.getTabItems()}
-      </section>
+      <section className={styles.tabWrapper}>{this.getTabItems()}</section>
     );
   }
 }

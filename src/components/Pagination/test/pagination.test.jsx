@@ -5,7 +5,6 @@ import { shallowToJson } from 'enzyme-to-json';
 // Components
 import Pagination from '../index';
 
-
 describe('Pagination Test Suite', () => {
   const onChange = jest.fn(() => {});
 
@@ -16,7 +15,7 @@ describe('Pagination Test Suite', () => {
         currentPage={1}
         limit={10}
         onChange={onChange}
-      />,
+      />
     );
     expect(shallowToJson(output)).toMatchSnapshot();
   });
@@ -28,7 +27,7 @@ describe('Pagination Test Suite', () => {
         currentPage={1}
         limit={10}
         onChange={onChange}
-      />,
+      />
     );
     expect(shallowToJson(output)).toMatchSnapshot();
   });
@@ -40,14 +39,13 @@ describe('Pagination Test Suite', () => {
         currentPage={1}
         limit={10}
         onChange={onChange}
-      />,
+      />
     );
     output.find('#prev').simulate('click', {
       stopPropagation: () => {}
     });
     expect(onChange).toHaveBeenCalled();
   });
-
 
   it('simulate click on next button', () => {
     const output = shallow(
@@ -56,7 +54,7 @@ describe('Pagination Test Suite', () => {
         currentPage={1}
         limit={10}
         onChange={onChange}
-      />,
+      />
     );
     output.find('#next').simulate('click', {
       stopPropagation: () => {}

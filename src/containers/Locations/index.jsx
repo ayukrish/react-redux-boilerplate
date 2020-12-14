@@ -12,7 +12,4 @@ const mapDispatchToProps = (dispatch) => ({
   getLocations: (pageNo) => dispatch(getLocations(pageNo))
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(Locations);
+export default connect(mapStateToProps, mapDispatchToProps)(Locations);

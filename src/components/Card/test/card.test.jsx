@@ -5,22 +5,14 @@ import { shallowToJson } from 'enzyme-to-json';
 // Components
 import Card from '../index';
 
-
 describe('Card Test Suite', () => {
   it('renders correctly without any data', () => {
-    const output = shallow(
-      <Card />,
-    );
+    const output = shallow(<Card />);
     expect(shallowToJson(output)).toMatchSnapshot();
   });
 
   it('renders correctly without dataObj', () => {
-    const output = shallow(
-      <Card
-        imgSrc="random Image"
-        heading="Test"
-      />,
-    );
+    const output = shallow(<Card imgSrc="random Image" heading="Test" />);
     expect(shallowToJson(output)).toMatchSnapshot();
   });
 
@@ -32,7 +24,7 @@ describe('Card Test Suite', () => {
         dataObj={{
           Test: 'test'
         }}
-      />,
+      />
     );
     expect(shallowToJson(output)).toMatchSnapshot();
   });

@@ -9,7 +9,6 @@ const defaultProps = {
   children: null
 };
 
-
 class ErrorBoundary extends React.Component {
   constructor(props) {
     super(props);

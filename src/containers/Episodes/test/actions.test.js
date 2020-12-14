@@ -6,23 +6,20 @@ const mockStore = configureStore();
 const store = mockStore();
 
 describe('Characters', () => {
-  beforeEach(() => { // Runs before each test in the suite
+  beforeEach(() => {
+    // Runs before each test in the suite
     store.clearActions();
   });
 
   it('Dispatches the correct getEpisodes action', () => {
-    const expectedActions = [
-      { type: GET_EPISODES, data: 1 }
-    ];
+    const expectedActions = [{ type: GET_EPISODES, data: 1 }];
 
     store.dispatch(getEpisodes(1));
     expect(store.getActions()).toEqual(expectedActions);
   });
 
   it('Dispatches the  setEpisodes action', () => {
-    const expectedActions = [
-      { type: SET_EPISODES, data: {} }
-    ];
+    const expectedActions = [{ type: SET_EPISODES, data: {} }];
 
     store.dispatch(setEpisodes({}));
     expect(store.getActions()).toEqual(expectedActions);

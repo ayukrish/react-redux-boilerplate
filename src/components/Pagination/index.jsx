@@ -9,9 +9,7 @@ const propTypes = {
   onChange: PropTypes.func.isRequired
 };
 
-const Pagination = ({
-  contentLength, currentPage, limit, onChange
-}) => {
+const Pagination = ({ contentLength, currentPage, limit, onChange }) => {
   const showPagination = contentLength <= limit;
   return (
     <div className={`${style.pagination} flex`}>
@@ -21,7 +19,7 @@ const Pagination = ({
             type="button"
             id="prev"
             disabled={currentPage === 1}
-            onClick={event => {
+            onClick={(event) => {
               event.stopPropagation();
               onChange(currentPage - 1);
             }}
@@ -32,7 +30,7 @@ const Pagination = ({
             type="button"
             id="next"
             disabled={contentLength < limit}
-            onClick={event => {
+            onClick={(event) => {
               event.stopPropagation();
               onChange(currentPage + 1);
             }}

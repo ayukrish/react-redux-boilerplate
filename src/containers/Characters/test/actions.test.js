@@ -6,23 +6,20 @@ const mockStore = configureStore();
 const store = mockStore();
 
 describe('Characters', () => {
-  beforeEach(() => { // Runs before each test in the suite
+  beforeEach(() => {
+    // Runs before each test in the suite
     store.clearActions();
   });
 
   it('Dispatches the correct getCharacters action', () => {
-    const expectedActions = [
-      { type: GET_CHARACTERS, data: 1 }
-    ];
+    const expectedActions = [{ type: GET_CHARACTERS, data: 1 }];
 
     store.dispatch(getCharacters(1));
     expect(store.getActions()).toEqual(expectedActions);
   });
 
   it('Dispatches the  setCharacters action', () => {
-    const expectedActions = [
-      { type: SET_CHARACTERS, data: {} }
-    ];
+    const expectedActions = [{ type: SET_CHARACTERS, data: {} }];
 
     store.dispatch(setCharacters({}));
     expect(store.getActions()).toEqual(expectedActions);

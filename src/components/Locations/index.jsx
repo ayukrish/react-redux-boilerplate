@@ -11,7 +11,7 @@ const propTypes = {
 
 const defaultProps = {
   locationData: {},
-  getLocations: () => { }
+  getLocations: () => {}
 };
 
 export default class Locations extends Component {
@@ -31,21 +31,22 @@ export default class Locations extends Component {
     const { results = {} } = locationData;
     return (
       <section className={`${styles.locationWrapper} flex wrap`}>
-        {results.length > 0 && results.map(item => (
-          <Card
-            key={item.id}
-            dataObj={{
-              TYPE: item && item.type,
-              DIMENSION: item && item.dimension
-            }}
-            heading={item && item.name}
-          />
-        ))}
+        {results.length > 0 &&
+          results.map((item) => (
+            <Card
+              key={item.id}
+              dataObj={{
+                TYPE: item && item.type,
+                DIMENSION: item && item.dimension
+              }}
+              heading={item && item.name}
+            />
+          ))}
         <Pagination
           contentLength={(results && results.length) || 0}
           currentPage={this.state.currentPage}
           limit={20}
-          onChange={currentPage => {
+          onChange={(currentPage) => {
             this.props.getLocations(currentPage);
             this.setState({
               currentPage

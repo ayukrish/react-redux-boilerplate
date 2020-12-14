@@ -5,14 +5,14 @@ const INITIAL_STATE = {
 };
 
 /**
-  * Reducer - to update services state
-  * @param {Object} state initial/default services state.
-  */
+ * Reducer - to update services state
+ * @param {Object} state initial/default services state.
+ */
 export default function (state = INITIAL_STATE, { type, data }) {
   switch (type) {
-  case SET_LOCATIONS:
-    return { ...state, data };
-  default:
-    return state;
+    case SET_LOCATIONS:
+      return { ...state, data };
+    default:
+      return state;
   }
 }

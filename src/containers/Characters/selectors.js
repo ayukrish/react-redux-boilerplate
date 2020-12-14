@@ -1,1 +1,2 @@
-export const charactersData = state => state.characters && state.characters.data;
+export const charactersData = (state) =>
+  state.characters && state.characters.data;

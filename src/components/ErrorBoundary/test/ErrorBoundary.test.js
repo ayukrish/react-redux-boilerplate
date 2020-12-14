@@ -15,7 +15,7 @@ describe('<ErrorBoundary> window', () => {
     const tree = mount(
       <ErrorBoundary>
         <Something />
-      </ErrorBoundary>,
+      </ErrorBoundary>
     );
 
     const error = new Error('test');

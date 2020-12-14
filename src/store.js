@@ -12,14 +12,18 @@ const middlewares = [sagaMiddleware];
 
 // const reduxRouterMiddleware = routerMiddleware(createBrowserHistory());
 // eslint-disable-next-line no-underscore-dangle
-const devTool = window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : f => f;
+const devTool = window.__REDUX_DEVTOOLS_EXTENSION__
+  ? window.__REDUX_DEVTOOLS_EXTENSION__()
+  : (f) => f;
 
 const configureStore = () => {
-  const store = createStore(rootReducer,
+  const store = createStore(
+    rootReducer,
     compose(
       applyMiddleware(...middlewares),
-      process.env.NODE_ENV === 'development' ? devTool : f => f,
-    ));
+      process.env.NODE_ENV === 'development' ? devTool : (f) => f
+    )
+  );
   store.asyncReducers = {};
   sagaMiddleware.run(rootSaga);
   return store;

@@ -9,7 +9,7 @@ export const service = (reqObj) => {
   return axios({
     method,
     url
-  }).then(response => {
+  }).then((response) => {
     return response && response.data;
   });
 };

@@ -12,7 +12,4 @@ export const mapDispatchToProps = (dispatch) => ({
   getCharacters: (pageNo) => dispatch(getCharacters(pageNo))
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(Characters);
+export default connect(mapStateToProps, mapDispatchToProps)(Characters);

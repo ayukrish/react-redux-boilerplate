@@ -4,7 +4,6 @@ import { enpoints } from '../../endpoint';
 import { setCharacters } from './actions';
 import { GET_CHARACTERS } from './constants';
 
-
 export function* getCharactersSaga({ data }) {
   try {
     // data is obtained after axios call is resolved

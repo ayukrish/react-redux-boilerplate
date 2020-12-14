@@ -5,28 +5,27 @@ import { shallowToJson } from 'enzyme-to-json';
 // Components
 import Locations from '../index';
 
-
 describe('Locations Test Suite', () => {
   it('renders correctly without any data', () => {
-    const output = shallow(
-      <Locations />,
-    );
+    const output = shallow(<Locations />);
     expect(shallowToJson(output)).toMatchSnapshot();
   });
 
   it('renders correctly without any data', () => {
     const output = shallow(
       <Locations
-        getLocations={() => { }}
+        getLocations={() => {}}
         locationData={{
-          results: [{
-            id: 1,
-            name: 'Earth (C-137)',
-            type: 'Planet',
-            dimension: 'Dimension C-137'
-          }]
+          results: [
+            {
+              id: 1,
+              name: 'Earth (C-137)',
+              type: 'Planet',
+              dimension: 'Dimension C-137'
+            }
+          ]
         }}
-      />,
+      />
     );
     output.find('Pagination').props().onChange(1);
     expect(output.state().currentPage).toEqual(1);
