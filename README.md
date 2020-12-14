@@ -23,7 +23,6 @@
 ### Code Quality
 
 - eslint 6.x
-- stylelint 13.x
 - husky ^4.x
 - lint-staged ^10.7
 
