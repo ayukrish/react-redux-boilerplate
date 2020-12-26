@@ -6,9 +6,6 @@
     "source.fixAll.eslint": true
   },
   "eslint.validate": ["javascript", "javascriptreact"],
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
