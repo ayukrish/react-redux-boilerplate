@@ -1,4 +1,4 @@
-# React-Redux-Saga Boilerplate
+# React Redux Saga Boilerplate
 
 ### Provides
 
