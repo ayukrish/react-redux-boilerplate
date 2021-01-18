@@ -13,7 +13,7 @@ export const service = (reqObj) => {
           return JSON.parse(res);
         });
       }
-      return response.text().then((res: any) => {
+      return response.text().then((res) => {
         return Promise.reject(res);
       });
     })
