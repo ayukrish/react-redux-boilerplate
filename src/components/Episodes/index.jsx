@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Card from '../Card';
 import Pagination from '../Pagination';
@@ -14,7 +14,7 @@ const defaultProps = {
   getEpisodes: () => {}
 };
 
-export default class Episodes extends Component {
+export default class Episodes extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Card from '../Card';
 import * as styles from './characters.scss';
@@ -14,7 +14,7 @@ const defaultProps = {
   getCharacters: () => {}
 };
 
-export default class Characters extends Component {
+export default class Characters extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -51,7 +51,7 @@ export default class Characters extends Component {
           currentPage={this.state.currentPage}
           limit={20}
           onChange={(currentPage) => {
-            this.props.getCharacters(currentPage);
+            // this.props.getCharacters(currentPage);
             this.setState({
               currentPage
             });
