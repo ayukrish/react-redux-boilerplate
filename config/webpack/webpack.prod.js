@@ -1,4 +1,18 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const path = require('path');
+
+/* eslint-disable no-plusplus */
+function generateRandomClassNames(charLength, current = '') {
+  let length = charLength;
+  return length
+    ? generateRandomClassNames(
+        --length,
+        '0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz'.charAt(
+          Math.floor(Math.random() * 60)
+        ) + current
+      )
+    : current;
+}
 
 module.exports = {
   // optimization: {
@@ -21,15 +35,22 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              modules: true,
+              modules: {
+                // localIdentName: '[local]'
+                getLocalIdent: (context, localIdentName, localName) => {
+                  const fileName = path.basename(context.resourcePath);
+                  if (fileName.indexOf('index.scss') !== -1) {
+                    return localName;
+                  }
+                  // return localName;
+                  return generateRandomClassNames(4);
+                }
+              },
               sourceMap: false
             }
           },
           {
-            loader: 'sass-loader',
-            options: {
-              sourceMap: false
-            }
+            loader: 'sass-loader'
           }
         ]
       }

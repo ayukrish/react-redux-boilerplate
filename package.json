@@ -6,7 +6,8 @@
   "scripts": {
     "format": "prettier \"**/*.+(js|jsx|css|scss|md|json)\" --write",
     "lint": "eslint \"**/*.+(js|jsx)\"",
-    "start": "webpack-dev-server --config ./webpack.config.js --mode development",
+    "start": "NODE_ENV=development webpack-dev-server --config ./webpack.config.js",
+    "build": "NODE_ENV=production webpack --config ./webpack.config.js",
     "test": "jest --coverage",
     "test:watch": "jest --watch",
     "test:update-snapshot": "jest --updateSnapshot --coverage"

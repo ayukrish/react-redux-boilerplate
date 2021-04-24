@@ -10,3 +10,5 @@ npm-debug.log
 dump.rdb
 
 coverage
+
+dist
