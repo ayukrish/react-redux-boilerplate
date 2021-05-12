@@ -45,8 +45,7 @@ module.exports = {
                   // return localName;
                   return generateRandomClassNames(4);
                 }
-              },
-              sourceMap: true
+              }
             }
           },
           {
