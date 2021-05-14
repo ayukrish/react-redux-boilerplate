@@ -24,8 +24,8 @@
 
 - eslint 6.x
 - husky ^4.x
-- lint-staged ^10.7
-- prettier ^2.x,
+- lint-staged ^10.x
+- prettier ^2.x
 
 `npm run lint / npm run format`
 
