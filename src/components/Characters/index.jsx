@@ -51,7 +51,7 @@ export default class Characters extends PureComponent {
           currentPage={this.state.currentPage}
           limit={20}
           onChange={(currentPage) => {
-            // this.props.getCharacters(currentPage);
+            this.props.getCharacters(currentPage);
             this.setState({
               currentPage
             });
