@@ -5,10 +5,6 @@ const commonPaths = require('./path');
 module.exports = {
   // Webpack 4 by default has a default entry point of index.js in your src folder
   entry: commonPaths.entryPath,
-  output: {
-    filename: 'bundle.js',
-    path: commonPaths.outputPath
-  },
   module: {
     rules: [
       {

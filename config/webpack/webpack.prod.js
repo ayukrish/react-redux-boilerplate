@@ -1,9 +1,10 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
+const commonPaths = require('./path');
 
+/* eslint-disable no-param-reassign */
 /* eslint-disable no-plusplus */
-function generateRandomClassNames(charLength, current = '') {
-  let length = charLength;
+function generateRandomClassNames(length, current = '') {
   return length
     ? generateRandomClassNames(
         --length,
@@ -15,19 +16,18 @@ function generateRandomClassNames(charLength, current = '') {
 }
 
 module.exports = {
-  // optimization: {
-  //   splitChunks: {
-  //     chunks: 'all'
-  //   }
-  // },
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
+    }
+  },
+  output: {
+    filename: '[name].bundle.js',
+    path: commonPaths.outputPath
+  },
   mode: 'production',
   module: {
     rules: [
-      // node-sass provides binding for Node.js to LibSass, a Sass compiler.
-      // sass-loader is a loader for Webpack for compiling SCSS/Sass files.
-      // style-loader injects our styles into our DOM.
-      // css-loader interprets @import and @url() and resolves them.
-      // mini-css-extract-plugin extracts our CSS out of the JavaScript bundle into a separate file, essential for production builds.
       {
         test: /\.s(a|c)ss$/,
         loader: [
@@ -36,14 +36,14 @@ module.exports = {
             loader: 'css-loader',
             options: {
               modules: {
-                // localIdentName: '[local]'
+                // mode: 'local',
+                // localIdentName: '[hash:base64:5]',
                 getLocalIdent: (context, localIdentName, localName) => {
                   const fileName = path.basename(context.resourcePath);
                   if (fileName.indexOf('index.scss') !== -1) {
                     return localName;
                   }
-                  // return localName;
-                  return generateRandomClassNames(4);
+                  return `_${generateRandomClassNames(4)}`;
                 }
               }
             }

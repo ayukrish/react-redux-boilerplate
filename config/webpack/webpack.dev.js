@@ -1,6 +1,12 @@
+const commonPaths = require('./path');
+
 module.exports = {
   mode: 'development',
   devtool: 'inline-source-map',
+  output: {
+    filename: 'bundle.js',
+    path: commonPaths.outputPath
+  },
   module: {
     rules: [
       // node-sass provides binding for Node.js to LibSass, a Sass compiler.
