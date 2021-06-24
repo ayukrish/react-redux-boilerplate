@@ -28,7 +28,7 @@ module.exports = {
                   }
                   return 'local';
                 },
-                localIdentName: '[hash:base64:6]'
+                localIdentName: '[hash:base64:5]'
               }
             }
           },
