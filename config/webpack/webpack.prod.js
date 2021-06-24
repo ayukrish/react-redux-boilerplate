@@ -1,19 +1,5 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const path = require('path');
 const commonPaths = require('./path');
-
-/* eslint-disable no-param-reassign */
-/* eslint-disable no-plusplus */
-function generateRandomClassNames(length, current = '') {
-  return length
-    ? generateRandomClassNames(
-        --length,
-        '0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz'.charAt(
-          Math.floor(Math.random() * 60)
-        ) + current
-      )
-    : current;
-}
 
 module.exports = {
   optimization: {
@@ -36,15 +22,13 @@ module.exports = {
             loader: 'css-loader',
             options: {
               modules: {
-                // mode: 'local',
-                // localIdentName: '[hash:base64:5]',
-                getLocalIdent: (context, localIdentName, localName) => {
-                  const fileName = path.basename(context.resourcePath);
-                  if (fileName.indexOf('index.scss') !== -1) {
-                    return localName;
+                mode: (resourcePath) => {
+                  if (resourcePath.includes('index.scss')) {
+                    return 'global';
                   }
-                  return `_${generateRandomClassNames(4)}`;
-                }
+                  return 'local';
+                },
+                localIdentName: '[hash:base64:5]'
               }
             }
           },
